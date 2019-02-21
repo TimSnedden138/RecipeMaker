@@ -21,29 +21,51 @@ namespace MakerWindow
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Ingredient> possibleIngs = new ObservableCollection<Ingredient>();
         public ObservableCollection<string> added = new ObservableCollection<string>();
 
         public MainWindow()
         {
             InitializeComponent();
             Adding.ItemsSource = added;
+            Ingredients.ItemsSource = possibleIngs;
+
+            possibleIngs.Add(new Ingredient("Tomatoes", false));
+            possibleIngs.Add(new Ingredient("Eggs", false));
+            possibleIngs.Add(new Ingredient("Toast", false));
         }
 
-        private void HandleCheck(object sender, RoutedEventArgs e)
+        private void HandleCheckChanged(object sender, RoutedEventArgs e)
         {
-            var check = sender as CheckBox;
-            added.Add(check.Name);
-        }
+            var check = (CheckBox)e.OriginalSource;
+            var ing = (Ingredient)check.DataContext;
 
-        private void HandleUnchecked(object sender, RoutedEventArgs e)
-        {
-            var check = sender as CheckBox;
-            added.Remove(check.Name);
+            if(check.IsChecked == true)
+            {
+                added.Add(ing.FoodName);
+            }
+            else
+            {
+                added.Remove(ing.FoodName);
+            }
+            
+            
         }
     }
 
     public class Ingredient
     {
+        public Ingredient()
+        {
+           
+            FoodName = "not food";
+            IsUsed = true;
+        }
+        public Ingredient(string name, bool use)
+        {
+            FoodName = name;
+            IsUsed = use;
+        }
         public string FoodName {get;set;}
 
         public bool IsUsed { get; set; }
