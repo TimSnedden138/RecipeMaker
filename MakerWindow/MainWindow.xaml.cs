@@ -23,16 +23,24 @@ namespace MakerWindow
     {
         public ObservableCollection<Ingredient> possibleIngs = new ObservableCollection<Ingredient>();
         public ObservableCollection<string> added = new ObservableCollection<string>();
-
+        public ObservableCollection<Recipe> possibleRecs = new ObservableCollection<Recipe>();
         public MainWindow()
         {
             InitializeComponent();
             Adding.ItemsSource = added;
             Ingredients.ItemsSource = possibleIngs;
-
+            Recipes.ItemsSource = possibleRecs;
             possibleIngs.Add(new Ingredient("Tomatoes", false));
             possibleIngs.Add(new Ingredient("Eggs", false));
             possibleIngs.Add(new Ingredient("Toast", false));
+            possibleIngs.Add(new Ingredient("Cheese", false));
+            possibleIngs.Add(new Ingredient("Beef", false));
+            possibleIngs.Add(new Ingredient("Chicken", false));
+            possibleIngs.Add(new Ingredient("Green Onion", false));
+            possibleIngs.Add(new Ingredient("Purple Onion", false));
+            possibleIngs.Add(new Ingredient("Bell Pepper", false));
+            possibleIngs.Add(new Ingredient("Red Pepper", false));
+            possibleIngs.Add(new Ingredient("Green Pepper", false));
         }
 
         private void HandleCheckChanged(object sender, RoutedEventArgs e)
@@ -40,7 +48,7 @@ namespace MakerWindow
             var check = (CheckBox)e.OriginalSource;
             var ing = (Ingredient)check.DataContext;
 
-            if(check.IsChecked == true)
+            if (check.IsChecked == true)
             {
                 added.Add(ing.FoodName);
             }
@@ -48,8 +56,13 @@ namespace MakerWindow
             {
                 added.Remove(ing.FoodName);
             }
-            
-            
+
+
+        }
+
+        private void Adding_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 
@@ -57,7 +70,7 @@ namespace MakerWindow
     {
         public Ingredient()
         {
-           
+
             FoodName = "not food";
             IsUsed = true;
         }
@@ -66,9 +79,21 @@ namespace MakerWindow
             FoodName = name;
             IsUsed = use;
         }
-        public string FoodName {get;set;}
+        public string FoodName { get; set; }
 
         public bool IsUsed { get; set; }
     }
+    public class Recipe
+    {
+        public Recipe()
+        {
+            RecipeName = "not recipe";
+        }
+        public Recipe(string name,bool requiredIngs)
+        {
+            RecipeName = name;
+        }
+        public string RecipeName { get; set; }
+        public bool requiredIngs { get; set; }
+    }
 }
-
