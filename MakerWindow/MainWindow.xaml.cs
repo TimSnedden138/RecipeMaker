@@ -23,13 +23,14 @@ namespace MakerWindow
     {
         public ObservableCollection<Ingredient> possibleIngs = new ObservableCollection<Ingredient>();
         public ObservableCollection<string> added = new ObservableCollection<string>();
-        public ObservableCollection<Recipe> possibleRecs = new ObservableCollection<Recipe>();
+        public ObservableCollection<Recipe> ValidRecipes = new ObservableCollection<Recipe>();
+        public ObservableCollection<string> addedRec = new ObservableCollection<string>();
         public MainWindow()
         {
             InitializeComponent();
             Adding.ItemsSource = added;
             Ingredients.ItemsSource = possibleIngs;
-            Recipes.ItemsSource = possibleRecs;
+            Addingrec.ItemsSource = addedRec;
             possibleIngs.Add(new Ingredient("Tomatoes", false));
             possibleIngs.Add(new Ingredient("Eggs", false));
             possibleIngs.Add(new Ingredient("Toast", false));
@@ -41,13 +42,16 @@ namespace MakerWindow
             possibleIngs.Add(new Ingredient("Bell Pepper", false));
             possibleIngs.Add(new Ingredient("Red Pepper", false));
             possibleIngs.Add(new Ingredient("Green Pepper", false));
+            possibleIngs.Add(new Ingredient("Butter", false));
+            ValidRecipes.Add(new Recipe("SunnySideUpEggs", new List<Ingredient>() { new Ingredient("Eggs", false) }));
+            ValidRecipes.Add(new Recipe("Toasty", new List<Ingredient>() { new Ingredient("Cheese", false), new Ingredient("Toast", false) }));
         }
 
         private void HandleCheckChanged(object sender, RoutedEventArgs e)
         {
             var check = (CheckBox)e.OriginalSource;
             var ing = (Ingredient)check.DataContext;
-
+            int checkedIngs = 0;
             if (check.IsChecked == true)
             {
                 added.Add(ing.FoodName);
@@ -56,8 +60,27 @@ namespace MakerWindow
             {
                 added.Remove(ing.FoodName);
             }
-
-
+            for (int i = 0; i < ValidRecipes.Count; i++)
+            {
+                for (int r = 0; r < added.Count; r++)
+                {
+                    for (int t = 0; t < ValidRecipes[i].RequiredIngs.Count; t++)
+                    {
+                            if (ing.FoodName == ValidRecipes[i].RequiredIngs[t].FoodName)
+                            {
+                                checkedIngs++;
+                            }
+                        }
+                    }
+                }
+            if(checkedIngs == ValidRecipes.Count)
+            {
+                addedRec.Add("one");
+            }
+            else
+            {
+                addedRec.Remove("one");
+            }
         }
 
         private void Adding_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -88,12 +111,16 @@ namespace MakerWindow
         public Recipe()
         {
             RecipeName = "not recipe";
+            RequiredIngs = new List<Ingredient>();
+
         }
-        public Recipe(string name,bool requiredIngs)
+        public Recipe(string name, List<Ingredient> requiredIngs)
         {
             RecipeName = name;
+            RequiredIngs = requiredIngs;
         }
         public string RecipeName { get; set; }
-        public bool requiredIngs { get; set; }
+        public List<Ingredient> RequiredIngs { get; set; }
+
     }
 }
