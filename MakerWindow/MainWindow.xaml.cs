@@ -43,7 +43,7 @@ namespace MakerWindow
             possibleIngs.Add(new Ingredient("Red Pepper", false));
             possibleIngs.Add(new Ingredient("Green Pepper", false));
             possibleIngs.Add(new Ingredient("Butter", false));
-            ValidRecipes.Add(new Recipe("SunnySideUpEggs", new List<Ingredient>() { new Ingredient("Eggs", false) }));
+            ValidRecipes.Add(new Recipe("SunnySideUpEggs", new List<Ingredient>() { new Ingredient("Eggs", false),new Ingredient("Butter",false)}));
             ValidRecipes.Add(new Recipe("Toasty", new List<Ingredient>() { new Ingredient("Cheese", false), new Ingredient("Toast", false) }));
         }
 
@@ -66,21 +66,26 @@ namespace MakerWindow
                 {
                     for (int t = 0; t < ValidRecipes[i].RequiredIngs.Count; t++)
                     {
-                            if (ing.FoodName == ValidRecipes[i].RequiredIngs[t].FoodName)
+                        if (ing.FoodName == ValidRecipes[i].RequiredIngs[t].FoodName)
+                        {
+                            checkedIngs++;
+                            if (checkedIngs == ValidRecipes.Count)
                             {
-                                checkedIngs++;
+                                addedRec.Add(ValidRecipes[i].RecipeName);
+                            }
+                            else
+                            {
+                                addedRec.Remove(ValidRecipes[i].RecipeName);
                             }
                         }
                     }
                 }
-            if(checkedIngs == ValidRecipes.Count)
-            {
-                addedRec.Add("one");
             }
-            else
-            {
-                addedRec.Remove("one");
-            }
+            //if (checkedIngs == ValidRecipes.Count)
+            //{
+            //    addedRec.Add(ValidRecipes[recipeCounter].RecipeName);
+            //}
+
         }
 
         private void Adding_SelectionChanged(object sender, SelectionChangedEventArgs e)
