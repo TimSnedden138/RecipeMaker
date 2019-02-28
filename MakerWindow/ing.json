@@ -1,27 +1,33 @@
-﻿{
+{
 
-	"Ingredient": [
-		{"name" :  "Eggs",
-		"isUsed" : "false"
-		},
-		{"name" :  "Toast",
-		"isUsed" : "false"
-		},		
-		{"name" :  "Butter",
-		"isUsed" : "false"
-		},
-		{"name" :  "Cheese",
-		"isUsed" : "false"
-		},
-		{"name" :  "Red Pepper",
-		"isUsed" : "false"
-		},
-		{"name" :  "Bell Pepper",
-		"isUsed" : "false"
-		},
-		{"name" :  "Green Pepper",
-		"isUsed" : "false"
-		},
-	]
-
+  "Ings": [
+    {
+      "foodname": "Eggs",
+      "isUsed": "false"
+    },
+    {
+      "foodname": "Toast",
+      "isUsed": "false"
+    },
+    {
+      "foodname": "Butter",
+      "isUsed": "false"
+    },
+    {
+      "foodname": "Cheese",
+      "isUsed": "false"
+    },
+    {
+      "foodname": "Red Pepper",
+      "isUsed": "false"
+    },
+    {
+      "foodname": "Bell Pepper",
+      "isUsed": "false"
+    },
+    {
+      "foodname": "Green Pepper",
+      "isUsed": "false"
+    } 
+  ]
 }

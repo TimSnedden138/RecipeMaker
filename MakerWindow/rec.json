@@ -1,0 +1,30 @@
+﻿{
+  "Recs": [
+    {
+      "RecipeName": "SunnySideUpEggs",
+      "RequiredIngs": [
+        {
+          "FoodName": "Eggs",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Butter",
+          "IsUsed": "False"
+        }
+      ]
+    },
+    {
+      "RecipeName": "Toast",
+      "RequiredIngs": [
+        {
+          "FoodName": "Bread",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Cheese",
+          "IsUsed": "False"
+        }
+      ]
+    }
+  ]
+}
