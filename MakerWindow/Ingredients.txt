@@ -1,0 +1,11 @@
+Toast
+Eggs
+Butter
+Cheese
+Pepper(Green)
+Pepper(Red)
+Pepper(Bell)
+Beef
+Chicken
+Onion(Green)
+Onion(Purple)

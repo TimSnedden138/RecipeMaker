@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Newtonsoft.Json;
 namespace MakerWindow
 {
     /// <summary>
@@ -27,26 +28,19 @@ namespace MakerWindow
         public ObservableCollection<string> addedRec = new ObservableCollection<string>();
         public MainWindow()
         {
+            
             InitializeComponent();
+            string[] linesIng = System.IO.File.ReadAllLines(@"C:\Users\s189066\source\repos\RecipeMaker\MakerWindow\Ingredients.txt");
+            string[] linesRec = System.IO.File.ReadAllLines(@"C:\Users\s189066\source\repos\RecipeMaker\MakerWindow\Recipes.txt");
             Adding.ItemsSource = added;
             Ingredients.ItemsSource = possibleIngs;
             Addingrec.ItemsSource = addedRec;
-            possibleIngs.Add(new Ingredient("Tomatoes", false));
-            possibleIngs.Add(new Ingredient("Eggs", false));
-            possibleIngs.Add(new Ingredient("Toast", false));
-            possibleIngs.Add(new Ingredient("Cheese", false));
-            possibleIngs.Add(new Ingredient("Beef", false));
-            possibleIngs.Add(new Ingredient("Chicken", false));
-            possibleIngs.Add(new Ingredient("Green Onion", false));
-            possibleIngs.Add(new Ingredient("Purple Onion", false));
-            possibleIngs.Add(new Ingredient("Bell Pepper", false));
-            possibleIngs.Add(new Ingredient("Red Pepper", false));
-            possibleIngs.Add(new Ingredient("Green Pepper", false));
-            possibleIngs.Add(new Ingredient("Butter", false));
-            ValidRecipes.Add(new Recipe("SunnySideUpEggs", new List<Ingredient>() { new Ingredient("Eggs", false),new Ingredient("Butter",false)}));
+            foreach (string line in linesRec)
+            {
+                ValidRecipes.Add(new Recipe(line, new List<Ingredient>() { new Ingredient("Butter", false), new Ingredient("Eggs", false) }));
+            }
             ValidRecipes.Add(new Recipe("Toasty", new List<Ingredient>() { new Ingredient("Cheese", false), new Ingredient("Toast", false) }));
         }
-
         private void HandleCheckChanged(object sender, RoutedEventArgs e)
         {
             var check = (CheckBox)e.OriginalSource;
@@ -85,9 +79,7 @@ namespace MakerWindow
             //{
             //    addedRec.Add(ValidRecipes[recipeCounter].RecipeName);
             //}
-
         }
-
         private void Adding_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
