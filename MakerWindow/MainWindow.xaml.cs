@@ -14,12 +14,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 namespace MakerWindow
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
         public ObservableCollection<Ingredient> possibleIngs = new ObservableCollection<Ingredient>();
@@ -28,12 +30,35 @@ namespace MakerWindow
         public ObservableCollection<Recipe> addedRec = new ObservableCollection<Recipe>();
         public ObservableCollection<RecipeSteps> Steps = new ObservableCollection<RecipeSteps>();
         public ObservableCollection<string> addedRecsteps = new ObservableCollection<string>();
+        public Recipes outRec;
+        public Ingredients outIng;
+        void LoadtheFile()
+        {
+            OpenFileDialog filepathRec = new OpenFileDialog();
+            filepathRec.Title = "Open Rec.json";
+            if (filepathRec.ShowDialog() == true)
+            {
+                 outRec = JsonConvert.DeserializeObject<Recipes>(File.ReadAllText(filepathRec.FileName));
+            }
+            else
+            {
+                return;
+            }
+            OpenFileDialog filepathIng = new OpenFileDialog();
+            filepathIng.Title = "Open Ing.json";
+            if (filepathIng.ShowDialog() == true)
+            {
+                outIng = JsonConvert.DeserializeObject<Ingredients>(File.ReadAllText(filepathIng.FileName));
+            }
+            else
+            {
+                return;
+            }
+        }
         public MainWindow()
         {
-
             InitializeComponent();
-            Recipes outRec = JsonConvert.DeserializeObject<Recipes>(File.ReadAllText(@"C:\Users\s189066\source\repos\RecipeMaker\MakerWindow\rec.json"));
-            Ingredients outIng = JsonConvert.DeserializeObject<Ingredients>(File.ReadAllText(@"C:\Users\s189066\source\repos\RecipeMaker\MakerWindow\ing.json"));
+            LoadtheFile();
             Adding.ItemsSource = added;
             Ingredients.ItemsSource = possibleIngs;
             Addingrec.ItemsSource = addedRec;
@@ -73,7 +98,7 @@ namespace MakerWindow
                             {
                                 addedRec.Add(ValidRecipes[i]);
                             }
-                            else
+                            else if (checkedIngs != ValidRecipes[i].RequiredIngs.Count)
                             {
                                 addedRec.Remove(ValidRecipes[i]);
                             }
@@ -86,7 +111,7 @@ namespace MakerWindow
         {
             ListBox recipeBox = sender as ListBox;
             Recipe selectedRecipe = recipeBox.SelectedItem as Recipe;
-
+            OpenFileDialog Search = new OpenFileDialog();
             // exit early if nothing is selected
             if (selectedRecipe == null) { return; }
 
@@ -95,14 +120,26 @@ namespace MakerWindow
             if (selectedRecipe != null)
             {
                 Steps.Clear();
-                for (int i = 0; i < selectedRecipe.ListofSteps.Count; i++) {
+                for (int i = 0; i < selectedRecipe.ListofSteps.Count; i++)
+                {
                     Steps.Add(new RecipeSteps(selectedRecipe.ListofSteps[i]));
+                }
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text File|*.txt";
+                saveFileDialog.Title = "Save the Steps if you want to";
+                saveFileDialog.ShowDialog();
+                if (saveFileDialog.FileName == "")
+                {
+                    return;
+                }
+                if (saveFileDialog.FileName != "")
+                {
+                    string name = saveFileDialog.FileName;
+                    File.WriteAllLines(name, selectedRecipe.ListofSteps);
                 }
             }
         }
     }
-
-
     public class RecipeSteps
     {
         public RecipeSteps()
