@@ -1,33 +1,76 @@
 {
-
   "Ings": [
     {
-      "foodname": "Eggs",
+      "FoodName": "Eggs",
       "isUsed": "false"
     },
     {
-      "foodname": "Toast",
+      "FoodName": "Bread",
       "isUsed": "false"
     },
     {
-      "foodname": "Butter",
+      "FoodName": "Butter",
       "isUsed": "false"
     },
     {
-      "foodname": "Cheese",
+      "FoodName": "Cheese",
       "isUsed": "false"
     },
     {
-      "foodname": "Red Pepper",
+      "FoodName": "Red Pepper",
       "isUsed": "false"
     },
     {
-      "foodname": "Bell Pepper",
+      "FoodName": "Bell Pepper",
       "isUsed": "false"
     },
     {
-      "foodname": "Green Pepper",
+      "FoodName": "Green Pepper",
       "isUsed": "false"
-    } 
+    },
+    {
+      "FoodName": "Stove",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Vanilla Ice Cream",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Beef",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Chicken",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Cream",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Whipped Cream",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Wheat",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Vanilla",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Milk",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Secret Maybe?",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Sauce",
+      "isUsed": "false"
+    }
   ]
 }

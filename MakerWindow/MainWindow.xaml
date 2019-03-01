@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="RecipeMaker" Height="450" Width="850">
+        Title="RecipeMaker" Height="850" Width="1000">
     <Window.Resources>
         <DataTemplate x:Key="AddingIng">
             <StackPanel Orientation="Horizontal"  >
@@ -40,8 +40,7 @@
                         <Setter Property="FontFamily" Value="Century Gothic Italic"/>
                     </Style>
                 </StackPanel.Resources>
-                <TextBlock Text="{Binding}" />
-                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                <TextBlock Text="{Binding Path=RecipeName}" />
             </StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="RecipeSteps">
@@ -59,7 +58,7 @@
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="0,0,0,234">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="16*" />
             <ColumnDefinition Width="83*"/>
@@ -80,12 +79,12 @@
             <Run Text="Added Ingredients"/>
         </Bold>
         </TextBlock>
-        
+
         <TextBlock x:Name="Rec" TextWrapping="Wrap" Margin="121,5,430,52" Grid.Column="1" FontFamily="Century Gothic "><Run FontWeight="Bold" Text="Available Recipes"/></TextBlock>
-        <ListBox Name="Ingredients" ItemTemplate="{DynamicResource IngredientTemplate}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Margin="0,19,10,1" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5"/>
-        <ListBox ItemTemplate="{DynamicResource AddingIng}" x:Name="Adding" HorizontalAlignment="Left" Height="400" Margin="0,20,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="Adding_SelectionChanged" Grid.RowSpan="3" Grid.Column="1"/>
-        <ListBox ItemTemplate="{DynamicResource AddingRec}" x:Name="Addingrec" HorizontalAlignment="Left" Height="400" Margin="121,19,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="Adding_SelectionChanged" Grid.RowSpan="3" Grid.Column="1"/>
-        <ListBox ItemTemplate="{DynamicResource RecipeSteps}" x:Name="RecipeSteps" HorizontalAlignment="Left" Height="400" Margin="262,20,0,0" VerticalAlignment="Top" Width="118" Grid.RowSpan="3" Grid.Column="1"/>
-        <TextBlock x:Name="Steps" TextWrapping="Wrap" Margin="262,4,289,53" Grid.Column="1" FontFamily="Century Gothic "><Run FontWeight="Bold" Text="Steps for Selected Recipe"/></TextBlock>
+        <ListBox Name="Ingredients" ItemTemplate="{DynamicResource IngredientTemplate}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Margin="0,19,10,0" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Height="443" VerticalAlignment="Top"/>
+        <ListBox ItemTemplate="{DynamicResource AddingIng}" x:Name="Adding" HorizontalAlignment="Left" Height="443" Margin="0,19,0,0" VerticalAlignment="Top" Width="116" SelectionChanged="Adding_SelectionChanged" Grid.RowSpan="3" Grid.Column="1"/>
+        <ListBox ItemTemplate="{DynamicResource AddingRec}" x:Name="Addingrec" HorizontalAlignment="Left" Height="443" Margin="121,19,0,0" VerticalAlignment="Top" Width="123" SelectionChanged="Adding_SelectionChanged" Grid.RowSpan="3" Grid.Column="1"/>
+        <ListBox ItemTemplate="{DynamicResource RecipeSteps}" x:Name="RecipeSteps" HorizontalAlignment="Left" Height="442" Margin="262,20,0,0" VerticalAlignment="Top" Width="465" Grid.RowSpan="3" Grid.Column="1"/>
+        <TextBlock x:Name="StepsText" TextWrapping="Wrap" Margin="262,4,289,53" Grid.Column="1" FontFamily="Century Gothic "><Run FontWeight="Bold" Text="Steps for Selected Recipe"/></TextBlock>
     </Grid>
 </Window>

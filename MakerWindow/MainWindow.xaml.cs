@@ -25,7 +25,7 @@ namespace MakerWindow
         public ObservableCollection<Ingredient> possibleIngs = new ObservableCollection<Ingredient>();
         public ObservableCollection<string> added = new ObservableCollection<string>();
         public ObservableCollection<Recipe> ValidRecipes = new ObservableCollection<Recipe>();
-        public ObservableCollection<string> addedRec = new ObservableCollection<string>();
+        public ObservableCollection<Recipe> addedRec = new ObservableCollection<Recipe>();
         public ObservableCollection<RecipeSteps> Steps = new ObservableCollection<RecipeSteps>();
         public ObservableCollection<string> addedRecsteps = new ObservableCollection<string>();
         public MainWindow()
@@ -44,7 +44,7 @@ namespace MakerWindow
             }
             for (int r = 0; r < outRec.Recs.Count(); r++)
             {
-                ValidRecipes.Add(new Recipe(outRec.Recs[r].RecipeName, outRec.Recs[r].RequiredIngs));
+                ValidRecipes.Add(new Recipe(outRec.Recs[r].RecipeName, outRec.Recs[r].RequiredIngs, outRec.Recs[r].ListofSteps));
             }
         }
         private void HandleCheckChanged(object sender, RoutedEventArgs e)
@@ -69,13 +69,13 @@ namespace MakerWindow
                         if (ing.FoodName == ValidRecipes[i].RequiredIngs[t].FoodName)
                         {
                             checkedIngs++;
-                            if (checkedIngs == ValidRecipes.Count)
+                            if (checkedIngs == ValidRecipes[i].RequiredIngs.Count)
                             {
-                                addedRec.Add(ValidRecipes[i].RecipeName);
+                                addedRec.Add(ValidRecipes[i]);
                             }
                             else
                             {
-                                addedRec.Remove(ValidRecipes[i].RecipeName);
+                                addedRec.Remove(ValidRecipes[i]);
                             }
                         }
                     }
@@ -84,12 +84,21 @@ namespace MakerWindow
         }
         private void Adding_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ListBox recipeBox = sender as ListBox;
+            Recipe selectedRecipe = recipeBox.SelectedItem as Recipe;
 
-        }
+            // exit early if nothing is selected
+            if (selectedRecipe == null) { return; }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Steps.Add(new RecipeSteps("NAMES\nTesting"));
+            // if you have a variable referring to the selected recipe (called selectedRecipe), how can
+            // you use it to populate the "Steps for Selected Recipe" listbox?
+            if (selectedRecipe != null)
+            {
+                Steps.Clear();
+                for (int i = 0; i < selectedRecipe.ListofSteps.Count; i++) {
+                    Steps.Add(new RecipeSteps(selectedRecipe.ListofSteps[i]));
+                }
+            }
         }
     }
 
@@ -131,16 +140,18 @@ namespace MakerWindow
         {
             RecipeName = "not recipe";
             RequiredIngs = new List<Ingredient>();
+            ListofSteps = new List<string>();
 
         }
-        public Recipe(string name, List<Ingredient> requiredIngs)
+        public Recipe(string name, List<Ingredient> requiredIngs, List<string> _Steps)
         {
             RecipeName = name;
             RequiredIngs = requiredIngs;
+            ListofSteps = _Steps;
         }
         public string RecipeName { get; set; }
         public List<Ingredient> RequiredIngs { get; set; }
-
+        public List<string> ListofSteps { get; set; }
     }
     public class Ingredients
     {
