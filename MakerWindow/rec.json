@@ -46,10 +46,6 @@
       "RecipeName": "Krabby Patty Recipe",
       "RequiredIngs": [
         {
-          "FoodName": "Secret Maybe?",
-          "IsUsed": "False"
-        },
-        {
           "FoodName": "Beef",
           "IsUsed": "False"
         },
@@ -126,6 +122,37 @@
         "and pour over the stuffed peppers. Bake 1 hour in the preheated oven,",
         "basting with sauce every 15 minutes, until the peppers are tender."
 
+      ]
+    },
+    {
+    "RecipeName": "CLICK ME TERRY",
+      "RequiredIngs": [
+        {
+          "FoodName": "Student",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Detective",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Chief",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Director",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Name: Haruhi Suzumiya",
+        "Age: 16",
+        "Birthday: October 18",
+        "Gender: Female",
+        "OccupationStudent (grade 10)",
+        "Ultra Director",
+        "Ultra Detective",
+        "Brigade Chief and Founder"
       ]
     }
   ]

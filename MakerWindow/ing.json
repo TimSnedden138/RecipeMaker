@@ -65,11 +65,23 @@
       "isUsed": "false"
     },
     {
-      "FoodName": "Secret Maybe?",
+      "FoodName": "Sauce",
       "isUsed": "false"
     },
     {
-      "FoodName": "Sauce",
+      "FoodName": "Detective",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Student",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Chief",
+      "isUsed": "false"
+    },
+    {
+      "FoodName": "Director",
       "isUsed": "false"
     }
   ]
