@@ -1,0 +1,304 @@
+﻿{
+  "Recs": [
+    {
+      "RecipeName": "SunnySideUpEggs",
+      "RequiredIngs": [
+        {
+          "FoodName": "Eggs",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Butter",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Step 1: Add water to a non-stick skillet until it reaches about 1/4",
+        "inch deep. Heat skillet over medium heat\n You'll want the water to cover the egg white and reach just",
+        "to the egg yolk.\n You don't want the water to cover the egg yolk at all.",
+        "Step 2: Break the egg and add to the skillet, when the water\n begins to bubble slightly.",
+        "Step 3: Using a large spoon, ladle water atop the egg white if the \nwater begins to reduce while cooking.",
+        "Step 4: Cook until the egg white is perfectly opaque and the egg\n is firm as you shake the skillet slightly.",
+        "Step 5: Use a slotted spatula and carefully lift the egg from the\nskillet,allowing any of the water to drain\nfrom the egg before plating."
+      ]
+    },
+	    {
+      "RecipeName": "ScrambledEggs",
+      "RequiredIngs": [
+        {
+          "FoodName": "Eggs",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Butter",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Step 1: Add water to a non-stick skillet until it reaches about 1/4",
+        "inch deep. Heat skillet over medium heat\n You'll want the water to cover the egg white and reach just",
+        "to the egg yolk.\n You don't want the water to cover the egg yolk at all.",
+        "Step 2: Break the egg and add to the skillet, when the water\n begins to bubble slightly.",
+        "Step 3: Using a large spoon, ladle water atop the egg white if the \nwater begins to reduce while cooking.",
+        "Step 4: Cook until the egg white is perfectly opaque and the egg\n is firm as you shake the skillet slightly.",
+        "Step 5: Use a slotted spatula and carefully lift the egg from the\nskillet,allowing any of the water to drain\nfrom the egg before plating."
+      ]
+    },
+	   {
+      "RecipeName": "Some Good Ribs",
+      "RequiredIngs": [
+        {
+          "FoodName": "Barbeque Sauce",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Ribs",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Step 1: Add water to a non-stick skillet until it reaches about 1/4",
+        "inch deep. Heat skillet over medium heat\n You'll want the water to cover the egg white and reach just",
+        "to the egg yolk.\n You don't want the water to cover the egg yolk at all.",
+        "Step 2: Break the egg and add to the skillet, when the water\n begins to bubble slightly.",
+        "Step 3: Using a large spoon, ladle water atop the egg white if the \nwater begins to reduce while cooking.",
+        "Step 4: Cook until the egg white is perfectly opaque and the egg\n is firm as you shake the skillet slightly.",
+        "Step 5: Use a slotted spatula and carefully lift the egg from the\nskillet,allowing any of the water to drain\nfrom the egg before plating."
+      ]
+    },
+    {
+      "RecipeName": "Vanilla Milkshake",
+      "RequiredIngs": [
+        {
+          "FoodName": "Vanilla Ice Cream",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Milk",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Vanilla",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Blend\n-1 pint vanilla ice cream\n-1/4 cup milk\n-1 teaspoon vanilla \nsalt is not required but maybe added if you do so \n-its a pinch"
+      ]
+    },
+    {
+      "RecipeName": "TOASTY",
+      "RequiredIngs": [
+        {
+          "FoodName": "Bread",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Fire",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "You know what this is if not then",
+        "Use the World Wide Web",
+        "Look Up it's pretty cool said that one guy who made this into a reality"
+      ]
+    },
+    {
+      "RecipeName": "Krabby Patty Recipe",
+      "RequiredIngs": [
+        {
+          "FoodName": "Beef",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Cheese",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Spatula",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Grill the patties until they are almost cooked through.",
+        "Add the cheese on top and cook until melted.",
+        "Spread the mustard and ketchup on the buns.",
+        "Put a patty on top of each.",
+        "Add the lettuce, tomatoes, pickles, and onion.",
+        "Top with the top bun and serve"
+      ]
+    },
+    {
+      "RecipeName": "Garlic Chicken",
+      "RequiredIngs": [
+        {
+          "FoodName": "Chicken",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Stove",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Melt butter in a large skillet over medium high heat.",
+        "Add chicken and sprinkle with garlic powder, seasoning salt and onion powder.",
+        "Saute about 10 to 15 minutes on each side, or until chicken is cooked through and juices run clear."
+
+      ]
+    },
+    {
+      "RecipeName": "Garlic Sauce",
+      "RequiredIngs": [
+        {
+          "FoodName": "Sea Salt",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Garlic",
+          "IsUsed": "false"
+        }
+      ],
+      "ListofSteps": [
+        "Melt butter in a large skillet over medium high heat.",
+        "Add chicken and sprinkle with garlic powder, seasoning salt and onion powder.",
+        "Saute about 10 to 15 minutes on each side, or until chicken is cooked through and juices run clear."
+
+      ]
+    },
+    {
+      "RecipeName": "Tomato Sauce",
+      "RequiredIngs": [
+        {
+          "FoodName": "Salt",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Tomato",
+          "IsUsed": "false"
+        }
+      ],
+      "ListofSteps": [
+        "Melt butter in a large skillet over medium high heat.",
+        "Add chicken and sprinkle with garlic powder, seasoning salt and onion powder.",
+        "Saute about 10 to 15 minutes on each side, or until chicken is cooked through and juices run clear."
+
+      ]
+    },
+    {
+      "RecipeName": "Stuffed Peppers",
+      "RequiredIngs": [
+        {
+          "FoodName": "Green Pepper",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Red Pepper",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Bell Pepper",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Preheat oven to 350 degrees F (175 degrees C).",
+        "Place the rice and water in a saucepan, and bring to a boil.",
+        "Reduce heat, cover, and cook 20 minutes. In a skillet over medium heat,",
+        "cook the beef until evenly browned.",
+        "Remove and discard the tops, seeds, and",
+        "membranes of the bell peppers. Arrange peppers",
+        "in a baking dish with the hollowed sides facing upward.",
+        "(Slice the bottoms of the peppers if necessary \nso that they will stand upright.)",
+        "In a bowl, mix the browned beef, cooked rice, 1 can tomato sauce,",
+        "Worcestershire sauce, garlic powder, onion powder, salt, and pepper.",
+        "Spoon an equal amount of the mixture into each hollowed pepper.",
+        "Mix the remaining tomato sauce and Italian seasoning in a bowl,",
+        "and pour over the stuffed peppers. Bake 1 hour in the preheated oven,",
+        "basting with sauce every 15 minutes, until the peppers are tender."
+
+      ]
+    },
+    {
+      "RecipeName": "Speedy Shepherd's Pie",
+      "RequiredIngs": [
+        {
+          "FoodName": "Ground Beef",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Taco Seasoning",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Mashed Potatoes",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Step 1:Preheat broiler. In a large ovenproof skillet",
+        "cook beef, onion and garlic over medium heat until beef is no longer pink",
+        "breaking up beef into crumble",
+        "drain. Stir in water and taco seasoning; heat through. Stir in 1 cup cheese. Remove from heat.",
+        "Step 2: In a bowl, mix mashed potatoes and remaining cheese;",
+        "spread over beef mixture. Broil 4-6 in. from heat 5-6 minutes or until top is golden brown."
+      ]
+    },
+    {
+      "RecipeName": "CLICK ME TERRY",
+      "RequiredIngs": [
+        {
+          "FoodName": "Student",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Detective",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Chief",
+          "IsUsed": "False"
+        },
+        {
+          "FoodName": "Director",
+          "IsUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "Name: Haruhi Suzumiya",
+        "Age: 16",
+        "Birthday: October 18",
+        "Gender: Female",
+        "OccupationStudent (grade 10)",
+        "Ultra Director",
+        "Ultra Detective",
+        "Brigade Chief and Founder"
+      ]
+    },
+    {
+      "RecipeName": "TESTING",
+      "RequiredIngs": [
+        {
+         "FoodName": "Cream",
+         "isUsed": "False"
+       },
+       {
+         "FoodName": "Whipped Cream",
+         "isUsed": "False"
+       },
+       {
+         "FoodName": "Wheat",
+         "isUsed": "False"
+       },
+	    {
+         "FoodName": "Deboy",
+         "isUsed": "False"
+        }
+      ],
+      "ListofSteps": [
+        "WHY DID YOU DO THAT IT DONT WORK THIS\n MAKES NOTHING FOR YOU TO COOK AND ITS HAS FEELINGS"
+      ]
+    }
+  ]
+}
